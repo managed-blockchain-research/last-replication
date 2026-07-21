@@ -1,0 +1,18 @@
+test:
+  name: baseline-match-e-spill
+  description: Baseline workload matching e-spill settings (1000 tx/s for 10 minutes)
+  workers:
+    type: local
+    number: 10
+  rounds:
+    - label: baseline-match
+      txDuration: 600
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 1000
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 50
+          contractId: StateBloater

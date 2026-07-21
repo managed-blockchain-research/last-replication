@@ -1,0 +1,18 @@
+test:
+  name: e-spill-baseline-low-intensity
+  description: Low intensity baseline - minimal GC pressure (200 tx/s for 5 minutes)
+  workers:
+    type: local
+    number: 20
+  rounds:
+    - label: low-intensity-bloat
+      txDuration: 300  # 5 minutes
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 200
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 50
+          contractId: StateBloater

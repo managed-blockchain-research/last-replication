@@ -1,0 +1,85 @@
+test:
+  name: raac-smoke
+  description: "Resource-limited smoke test: scaled-down copy of benchconfig-raac-burst-dynamic.yaml (workers 30->5, tps 100->15, rounds shortened) to validate the Arm2 heap_only chain before the full 23:00 KST run."
+  workers:
+    type: local
+    number: 5
+  rounds:
+    - label: warmup
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 15
+      workload:
+        module: benchmarks/mixedAttackLOHRaacBurst.js
+        arguments:
+          numContracts: 30
+          contractPrefix: SB
+          attackRatio: 0
+          roundLabel: warmup
+    - label: calm-1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 15
+      workload:
+        module: benchmarks/mixedAttackLOHRaacBurst.js
+        arguments:
+          numContracts: 30
+          contractPrefix: SB
+          attackRatio: 0
+          roundLabel: calm1
+    - label: attack-burst-1
+      txDuration: 15
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 15
+      workload:
+        module: benchmarks/mixedAttackLOHRaacBurst.js
+        arguments:
+          numContracts: 30
+          contractPrefix: SB
+          attackRatio: 1.0
+          roundLabel: attack1
+    - label: calm-2
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 15
+      workload:
+        module: benchmarks/mixedAttackLOHRaacBurst.js
+        arguments:
+          numContracts: 30
+          contractPrefix: SB
+          attackRatio: 0
+          roundLabel: calm2
+    - label: attack-burst-2
+      txDuration: 15
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 15
+      workload:
+        module: benchmarks/mixedAttackLOHRaacBurst.js
+        arguments:
+          numContracts: 30
+          contractPrefix: SB
+          attackRatio: 1.0
+          roundLabel: attack2
+    - label: calm-3
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 15
+      workload:
+        module: benchmarks/mixedAttackLOHRaacBurst.js
+        arguments:
+          numContracts: 30
+          contractPrefix: SB
+          attackRatio: 0
+          roundLabel: calm3

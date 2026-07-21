@@ -1,0 +1,18 @@
+test:
+  name: nm-sensitivity
+  description: 600s NM sensitivity ctrl vs LASS-60/75/90 at 400 TPS (below NM 476 TPS capacity)
+  workers:
+    type: local
+    number: 30
+  rounds:
+    - label: cliff-probe
+      txDuration: 600
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 150
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          contractId: StateBloater

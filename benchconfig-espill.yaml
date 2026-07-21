@@ -1,0 +1,18 @@
+test:
+  name: e-spill-performance-test
+  description: E-Spill Performance Test - heavy GC pressure (1000 tx/s for 10 minutes)
+  workers:
+    type: local
+    number: 10
+  rounds:
+    - label: espill-high-intensity
+      txDuration: 600  # 10 minutes
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 1000
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 50
+          contractId: StateBloater

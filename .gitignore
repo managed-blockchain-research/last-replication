@@ -1,0 +1,9 @@
+results/
+data_n_*/
+node_modules/
+*.log
+*.nettrace
+caliper.log
+report.html
+data_frag_smoke_*/
+data_n_heap_only*/

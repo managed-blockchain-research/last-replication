@@ -1,0 +1,26 @@
+{
+  "CollectionRules": {
+    "default": {
+      "Trigger": {
+        "Type": "Immediate"
+      },
+      "Actions": [
+        {
+          "Type": "CollectLiveMetrics",
+          "Settings": {
+            "IncludeDefaultProviders": true,
+            "Providers": [
+              {
+                "ProviderName": "System.Runtime"
+              },
+              {
+                "ProviderName": "EventCounters\\System.Runtime"
+              }
+            ],
+            "Duration": "00:00:30"
+          }
+        }
+      ]
+    }
+  }
+}

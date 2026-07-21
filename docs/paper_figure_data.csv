@@ -1,0 +1,8 @@
+# LASS paper figure data (single source for plots)
+# Sources: FINAL_COMPARISON_RESULTS.md (Besu), FINAL_COMPARISON_RESULTS_NETHERMIND.md
+# Besu GC 96.2%/98.1% from this run; P99 STW 35.4% from rerun (gc_p99_stw_rerun_ms)
+client,config,throughput_tx_s,success_count,fail_count,latency_min_ms,latency_avg_ms,latency_p50_ms,latency_p95_ms,latency_p99_ms,latency_max_ms,cv_pct,gc_overhead_pct,gc_events,total_gc_time_s,gc_p95_pause_ms,gc_p99_pause_ms,gc_p99_stw_rerun_ms,loh_bytes_100kb
+Besu,Baseline,108.75,65362,10849,6.88,132.40,95.90,371.53,548.08,1170.09,90.6,0.24,837,5.366,8.21,10.25,47.70,
+Besu,LASS,113.85,68426,11062,6.82,127.77,94.67,351.80,515.20,1075.71,88.1,0.02,16,0.200,23.92,23.92,30.82,
+Nethermind,Baseline,197.93,118785,3363,4.33,67.61,50.29,186.26,275.41,648.62,88.7,,,,,,,3959362
+Nethermind,LASS,209.31,125616,3333,4.15,63.99,47.88,176.11,261.88,627.84,88.7,,,,,,,3690858

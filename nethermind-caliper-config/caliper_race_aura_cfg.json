@@ -1,0 +1,57 @@
+{
+    "Init": {
+        "EnableUnsecuredDevWallet": true,
+        "KeepDevWalletInMemory": true,
+        "DiscoveryEnabled": false,
+        "PeerManagerEnabled": false,
+        "ChainSpecPath": "/home/yeochan.yoon/caliper-stress-test/nethermind-caliper-config/caliper_race_aura.json",
+        "BaseDbPath": "caliper_race_aura_db",
+        "LogFileName": "caliper_race_aura.log",
+        "MemoryHint": 512000000
+    },
+    "Sync": {
+        "NetworkingEnabled": false,
+        "SynchronizationEnabled": false
+    },
+    "TxPool": {
+        "Size": 4096,
+        "BlobsSupport": "Disabled"
+    },
+    "Network": {
+        "ActivePeersMaxCount": 0,
+        "MaxActivePeers": 0
+    },
+    "JsonRpc": {
+        "Enabled": true,
+        "Timeout": 60000,
+        "Host": "0.0.0.0",
+        "Port": 8545,
+        "WebSocketsPort": 8546,
+        "EnabledModules": [
+            "Admin", "Eth", "Health", "Net", "Parity", "Personal",
+            "Proof", "Subscribe", "Trace", "TxPool", "Web3"
+        ]
+    },
+    "Metrics": {
+        "NodeName": "RACE AuRa Dev"
+    },
+    "Mining": {
+        "Enabled": true,
+        "MinerAccount": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf"
+    },
+    "KeyStore": {
+        "KeyStoreDirectory": "/home/yeochan.yoon/caliper-stress-test/nethermind-caliper-config/race_aura_keystore",
+        "PasswordFiles": ["/home/yeochan.yoon/caliper-stress-test/nethermind-caliper-config/race_aura_password.txt"],
+        "UnlockAccounts": ["0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf"]
+    },
+    "Blocks": {
+        "MinGasPrice": 0,
+        "TargetBlockGasLimit": 200000000
+    },
+    "Merge": {
+        "Enabled": false
+    },
+    "Aura": {
+        "AllowAuRaPrivateChains": true
+    }
+}

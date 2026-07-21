@@ -1,0 +1,31 @@
+test:
+  name: probe5-nonce-fix
+  description: "Probe5 nonce hang fix. 30s warmup + 120s measure, 1500 TPS, 30 workers."
+  workers:
+    type: local
+    number: 30
+  rounds:
+    - label: warmup
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1500
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          numContracts: 30
+          contractPrefix: SB
+    - label: measure
+      txDuration: 120
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1500
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          numContracts: 30
+          contractPrefix: SB

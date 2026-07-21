@@ -1,0 +1,100 @@
+{
+  "caliper": {
+    "blockchain": "ethereum"
+  },
+  "ethereum": {
+    "url": "http://localhost:8545",
+    "chainId": 1337,
+    "gasPrice": "0",
+    "contractDeployerAddress": "0xBE0cf996DE312b11990E4BcbBf7Fc156880AcFC8",
+    "contractDeployerAddressPrivateKey": "0x8f2a55949038a9610f502c24114d051185071191bc20b60811a2d7fba4513689",
+    "fromAddressSeed": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+    "transactionOptions": {
+      "gas": 8000000,
+      "gasPrice": "0"
+    },
+    "transactionBlockTimeout": 200,
+    "transactionConfirmationBlocks": 1,
+    "txWallClockTimeout": 30,
+    "transactionPollingTimeout": 90,
+    "contracts": {
+      "SB0": {
+        "address": "0xe688F795c179B4B1ac92BB8236B15d590E4DbF12",
+        "abi": [
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "startIdx",
+                "type": "uint256"
+              },
+              {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "count",
+                "type": "uint256"
+              }
+            ],
+            "name": "Bloated",
+            "type": "event"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "startIdx",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "count",
+                "type": "uint256"
+              }
+            ],
+            "name": "bloat",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "name": "heavyStorage",
+            "outputs": [
+              {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [
+              {
+                "internalType": "bytes",
+                "name": "",
+                "type": "bytes"
+              }
+            ],
+            "name": "sink",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          }
+        ],
+        "gas": {
+          "gasLimit": 8000000
+        }
+      }
+    }
+  }
+}

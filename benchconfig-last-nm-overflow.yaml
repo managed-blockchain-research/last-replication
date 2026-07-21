@@ -1,0 +1,25 @@
+test:
+  name: last-nm-overflow-eval
+  description: >
+    LAST cross-runtime evaluation on Nethermind with cache-overflow workload.
+    30 contracts, 30 TPS, RocksDB, MemoryHint=1GB, TrieStore=4MB.
+    Variants: DISABLED / AL / HFL_9_1. Single 420s round, 30 workers.
+    30 TPS submission vs 5 TPS mining => pool depth ~25 => LAST-AL can group.
+    pollingTimeout=3s so caliper fails fast; NM mines all txs for GC capture.
+  workers:
+    type: local
+    number: 30
+  rounds:
+    - label: measure
+      txDuration: 420
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 30
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          numContracts: 30
+          contractPrefix: SB
+          slotCycleSize: 1000

@@ -1,0 +1,21 @@
+test:
+  name: e-spill-baseline-bloat
+  description: Spam unique storage slots to fill Besu Heap and force GC spikes.
+  workers:
+    type: local
+    number: 20  # High concurrency is critical.
+                # The e-spill paper notes that "mis-prediction" is worse
+                # when many threads allocate memory simultaneously [3].
+                # Your 48-core server can handle 20+ workers easily.
+  rounds:
+    - label: fill-accumulator
+      txDuration: 600  # Run for 10 minutes (enough time to fill 90GB heap)
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 200 # Keep 200 txs pending constantly to flood the mempool
+      workload:
+        module: benchmarks/stateBloat.js # Points to the script we will create next
+        arguments:
+          slotsPerTx: 50  # Each Tx writes 50 unique storage slots
+          contractId: StateBloater # Must match ID in networkconfig.json

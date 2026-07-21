@@ -1,0 +1,21 @@
+test:
+  name: xray-nm-clique-smoke
+  description: >
+    XRAY-v2 Clique smoke test — 30s only (warmup round).
+    Verifies: contract reachable, TPS achieved, no NethDev ceiling.
+  workers:
+    type: local
+    number: 20
+  rounds:
+    - label: smoke
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 15
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          numContracts: 1
+          contractPrefix: SB

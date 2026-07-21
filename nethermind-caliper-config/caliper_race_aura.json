@@ -1,0 +1,388 @@
+{
+    "name": "RACE Dev AuRa",
+    "dataDir": "race_aura_dev",
+    "engine": {
+        "authorityRound": {
+            "params": {
+                "stepDuration": 1,
+                "validators": {
+                    "list": [
+                        "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf"
+                    ]
+                },
+                "blockGasLimitContractTransitions": {}
+            }
+        }
+    },
+    "params": {
+        "gasLimitBoundDivisor": "0x0400",
+        "accountStartNonce": "0x0",
+        "maximumExtraDataSize": "0x20",
+        "minGasLimit": "0x1388",
+        "maxCodeSize": "0x6000",
+        "maxCodeSizeTransition": "0x0",
+        "chainID": "0x63",
+        "networkID": "0x63",
+        "eip140Transition": "0x0",
+        "eip145Transition": "0x0",
+        "eip150Transition": "0x0",
+        "eip155Transition": "0x0",
+        "eip160Transition": "0x0",
+        "eip161abcTransition": "0x0",
+        "eip161dTransition": "0x0",
+        "eip211Transition": "0x0",
+        "eip214Transition": "0x0",
+        "eip658Transition": "0x0",
+        "eip1014Transition": "0x0",
+        "eip1052Transition": "0x0",
+        "eip1283Transition": "0x0",
+        "eip1283DisableTransition": "0x0",
+        "eip152Transition": "0x0",
+        "eip1108Transition": "0x0",
+        "eip1344Transition": "0x0",
+        "eip1884Transition": "0x0",
+        "eip2028Transition": "0x0",
+        "eip2200Transition": "0x0",
+        "eip2565Transition": "0x0",
+        "eip2929Transition": "0x0",
+        "eip2930Transition": "0x0"
+    },
+    "genesis": {
+        "seal": {
+            "authorityRound": {
+                "step": "0x0",
+                "signature": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+        },
+        "difficulty": "0x1",
+        "gasLimit": "0xBEBC200",
+        "author": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+        "timestamp": "0x69fc5391",
+        "extraData": "0x"
+    },
+    "accounts": {
+        "0000000000000000000000000000000000000001": {
+            "balance": "1",
+            "nonce": "0",
+            "builtin": {
+                "name": "ecrecover",
+                "pricing": {
+                    "linear": {
+                        "base": 3000,
+                        "word": 0
+                    }
+                }
+            }
+        },
+        "0000000000000000000000000000000000000002": {
+            "balance": "1",
+            "nonce": "0",
+            "builtin": {
+                "name": "sha256",
+                "pricing": {
+                    "linear": {
+                        "base": 60,
+                        "word": 12
+                    }
+                }
+            }
+        },
+        "0000000000000000000000000000000000000003": {
+            "balance": "1",
+            "nonce": "0",
+            "builtin": {
+                "name": "ripemd160",
+                "pricing": {
+                    "linear": {
+                        "base": 600,
+                        "word": 120
+                    }
+                }
+            }
+        },
+        "0000000000000000000000000000000000000004": {
+            "balance": "1",
+            "nonce": "0",
+            "builtin": {
+                "name": "identity",
+                "pricing": {
+                    "linear": {
+                        "base": 15,
+                        "word": 3
+                    }
+                }
+            }
+        },
+        "0000000000000000000000000000000000000005": {
+            "balance": "1",
+            "nonce": "0",
+            "builtin": {
+                "name": "modexp",
+                "activate_at": 1700000,
+                "pricing": {
+                    "modexp": {
+                        "divisor": 20
+                    }
+                }
+            }
+        },
+        "0000000000000000000000000000000000000006": {
+            "balance": "1",
+            "nonce": "0",
+            "builtin": {
+                "name": "alt_bn128_add",
+                "activate_at": 1700000,
+                "pricing": {
+                    "linear": {
+                        "base": 500,
+                        "word": 0
+                    }
+                }
+            }
+        },
+        "0000000000000000000000000000000000000007": {
+            "balance": "1",
+            "nonce": "0",
+            "builtin": {
+                "name": "alt_bn128_mul",
+                "activate_at": 1700000,
+                "pricing": {
+                    "linear": {
+                        "base": 40000,
+                        "word": 0
+                    }
+                }
+            }
+        },
+        "0000000000000000000000000000000000000008": {
+            "balance": "1",
+            "nonce": "0",
+            "builtin": {
+                "name": "alt_bn128_pairing",
+                "activate_at": 1700000,
+                "pricing": {
+                    "alt_bn128_pairing": {
+                        "base": 100000,
+                        "pair": 80000
+                    }
+                }
+            }
+        },
+        "0000000000000000000000000000000000000009": {
+            "balance": "1"
+        },
+        "7e5f4552091a69125d5dfcb7b8c2659029395bdf": {
+            "balance": "1000000000000000000000000"
+        },
+        "2b5ad5c4795c026514f8317c7a215e218dccd6cf": {
+            "balance": "1000000000000000000000000"
+        },
+        "6813eb9362372eef6200f3b1dbc3f819671cba69": {
+            "balance": "1000000000000000000000000"
+        },
+        "1eff47bc3a10a45d4b230b5d10e37751fe6aa718": {
+            "balance": "1000000000000000000000000"
+        },
+        "e1ab8145f7e55dc933d51a18c793f901a3a0b276": {
+            "balance": "1000000000000000000000000"
+        },
+        "e57bfe9f44b819898f47bf37e5af72a0783e1141": {
+            "balance": "1000000000000000000000000"
+        },
+        "d41c057fd1c78805aac12b0a94a405c0461a6fbb": {
+            "balance": "1000000000000000000000000"
+        },
+        "f1f6619b38a98d6de0800f1defc0a6399eb6d30c": {
+            "balance": "1000000000000000000000000"
+        },
+        "f7edc8fa1ecc32967f827c9043fcae6ba73afa5c": {
+            "balance": "1000000000000000000000000"
+        },
+        "4cceba2d7d2b4fdce4304d3e09a1fea9fbeb1528": {
+            "balance": "1000000000000000000000000"
+        },
+        "b77AEC9f59f9D6F39793289a09AEa871932619Ed": {
+            "balance": "1000000000000000000000000"
+        },
+        "d1cf9d73a91de6630c2bb068ba5fddf9f0deac09": {
+            "balance": "1000000000000000000000000"
+        },
+        "d826e703658fa2ce8d1018d42e637c08d9846a17": {
+            "balance": "1000000000000000000000000"
+        },
+        "247ddfa00415710e0416f8c103b5e6428782c916": {
+            "balance": "1000000000000000000000000"
+        },
+        "500a8704f86c0d9126dfb949fdc4dc248c228fb4": {
+            "balance": "1000000000000000000000000"
+        },
+        "32d9ad8f398995fff658e74430749d65e0ee6702": {
+            "balance": "1000000000000000000000000"
+        },
+        "d32d3f6da1664c4ee7acae64fec3661cea6ee448": {
+            "balance": "1000000000000000000000000"
+        },
+        "5f6c5f2431ce84f2fa84deb6b27a1764db6feb1a": {
+            "balance": "1000000000000000000000000"
+        },
+        "9fcde74bf5465d5c32a09f158047803a061b3c1b": {
+            "balance": "1000000000000000000000000"
+        },
+        "b582703c0a0e2b598f9362a5e5c17ab6865b0342": {
+            "balance": "1000000000000000000000000"
+        },
+        "179740e29b1e7b2c61f6004b8d5cad575d6eaa88": {
+            "balance": "1000000000000000000000000"
+        },
+        "64504fbc37fa75a88c013f2be90ac5a5cab483ff": {
+            "balance": "1000000000000000000000000"
+        },
+        "7af066991ddd95ac5069c9098b2d468f846c8a45": {
+            "balance": "1000000000000000000000000"
+        },
+        "36034a93a438ef5a945fe06f02fa9adbc4eb8b2e": {
+            "balance": "1000000000000000000000000"
+        },
+        "42fe48f5436cca4202376edf5e15dbb4a80731c0": {
+            "balance": "1000000000000000000000000"
+        },
+        "88abf2cee4b58ab9702df91a1a516ccadab4d24d": {
+            "balance": "1000000000000000000000000"
+        },
+        "1225f8622c84b250b89ecd4493377c1a69ef7106": {
+            "balance": "1000000000000000000000000"
+        },
+        "03596930470e52354b61500057e73e1d4559b7de": {
+            "balance": "1000000000000000000000000"
+        },
+        "61cc661d90f575c1fa356f92edc2bb8ffad9adb3": {
+            "balance": "1000000000000000000000000"
+        },
+        "f9167846e02def6289c153f5ad55678c26881070": {
+            "balance": "1000000000000000000000000"
+        },
+        "a880178b9cf92d037715c4dea911ec530528b83d": {
+            "balance": "1000000000000000000000000"
+        },
+        "c298f0f265eb0ca3e5c656e33d2e9cfd0706ef29": {
+            "balance": "1000000000000000000000000"
+        },
+        "fbcb84314b5675a2e6262ca18f3d3f969eb8612a": {
+            "balance": "1000000000000000000000000"
+        },
+        "76019cb6c7a3f9b2e0b8d7e0177557b7ed30355e": {
+            "balance": "1000000000000000000000000"
+        },
+        "02b3e148e652c3f1857c208f2f9dc7c48c2c9d64": {
+            "balance": "1000000000000000000000000"
+        },
+        "e224b68ce29cee7cbd61a1cb789031e5ef5760f7": {
+            "balance": "1000000000000000000000000"
+        },
+        "2ded1e40703b87e53afaf1f39ab5630da5551650": {
+            "balance": "1000000000000000000000000"
+        },
+        "0eeca74f8bc24ecc5cb87d6b558eeb4ea83756f9": {
+            "balance": "1000000000000000000000000"
+        },
+        "3e57899e7f6ffd88c79d861872ec2b8301bcbb1c": {
+            "balance": "1000000000000000000000000"
+        },
+        "fb03ed9c4b1fc235d8eb4e03c88f81b30dffb44a": {
+            "balance": "1000000000000000000000000"
+        },
+        "cd18ba36a66bdbc6ad6f58bff175cd39bb9411c2": {
+            "balance": "1000000000000000000000000"
+        },
+        "349ed013f8e09fb63e9a6335f2cbb2ab01af447a": {
+            "balance": "1000000000000000000000"
+        },
+        "2d095c19d23eb508bb607c2183aed081b6b9232f": {
+            "balance": "1000000000000000000000"
+        },
+        "1b4f95c1eb49a3e056326d5531c30f07a9e1088a": {
+            "balance": "1000000000000000000000"
+        },
+        "fb6b4575b81e494720777ccb319fe3426d507114": {
+            "balance": "1000000000000000000000"
+        },
+        "230e2270d3c574a34d0141a9da28841d537eaa30": {
+            "balance": "1000000000000000000000"
+        },
+        "ca472f9b505e17d214a384263a8ed7fc4bbd2860": {
+            "balance": "1000000000000000000000"
+        },
+        "5df140e6290cf0d50fa6821a6863ec013527b7e8": {
+            "balance": "1000000000000000000000"
+        },
+        "5abeb91280077591072dabd15487a451b3f78d79": {
+            "balance": "1000000000000000000000"
+        },
+        "173eac0fe3183afae363ac5fa9d533a077ece914": {
+            "balance": "1000000000000000000000"
+        },
+        "ec2ab39ac873a0113a59261d524d5e90614f5c80": {
+            "balance": "1000000000000000000000"
+        },
+        "e9275ba35a2468c25d72b9bf2a4d208c55c0a111": {
+            "balance": "1000000000000000000000"
+        },
+        "c0ab0354a725ae59877e321a540b19fd1b008e7b": {
+            "balance": "1000000000000000000000"
+        },
+        "20f181eeef3226cd124a23c93ac3d2a5cbb54f24": {
+            "balance": "1000000000000000000000"
+        },
+        "0619c06df16362b1487f47374cbe7597dcf9eed3": {
+            "balance": "1000000000000000000000"
+        },
+        "bad8f939e60c0d04e841cf94b19f40ec59cf2c3f": {
+            "balance": "1000000000000000000000"
+        },
+        "d229e0068a948453e7a48410a11e27f2eb744cc9": {
+            "balance": "1000000000000000000000"
+        },
+        "ad8f556a7a0da053b515c7cf5ef9e59ad0b4a075": {
+            "balance": "1000000000000000000000"
+        },
+        "78835f1f62caa38b39e333181aaede3ddd7053cc": {
+            "balance": "1000000000000000000000"
+        },
+        "1e69a8543a618fe389b8a5bb4bf1285bd6bb0710": {
+            "balance": "1000000000000000000000"
+        },
+        "4b5be45d3fd62e7f1dfe71656c70e1b45c57a743": {
+            "balance": "1000000000000000000000"
+        },
+        "59b08670a89b81a15dc8030cce4b0df5e02bdcb4": {
+            "balance": "1000000000000000000000"
+        },
+        "ce7b6f7aee95b73d2f222d76aeb19fc00e34fa58": {
+            "balance": "1000000000000000000000"
+        },
+        "c94bf8d0b24f74e85626e22c08e06b8a8e35acbb": {
+            "balance": "1000000000000000000000"
+        },
+        "0426ed7773c0fed365e6a8f4df5cc39b93acbace": {
+            "balance": "1000000000000000000000"
+        },
+        "bd2513dd581363e75b23934d751f9e23d7a625f6": {
+            "balance": "1000000000000000000000"
+        },
+        "ddd2d4c21ee580bf33ba41d67bbffca3f461c212": {
+            "balance": "1000000000000000000000"
+        },
+        "0a37b514bed24f4333d368a725d4eaaf5515dd9c": {
+            "balance": "1000000000000000000000"
+        },
+        "8fa8699cac1a37f81265f7b2c4f9b0764c49d705": {
+            "balance": "1000000000000000000000"
+        },
+        "5c981cd9249b0d1ab20372fccc79932cdff6dd79": {
+            "balance": "1000000000000000000000"
+        },
+        "ed8611035f2e7bb242a6e121ece0ba234c82f5d5": {
+            "balance": "1000000000000000000000"
+        }
+    }
+}

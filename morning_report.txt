@@ -1,0 +1,48 @@
+======================================================
+PREP Besu Eval — Morning Report | 2026-05-19 07:00:00
+======================================================
+
+  [MISSING] baseline_3
+  [MISSING] baseline_4
+  [MISSING] baseline_5
+  [MISSING] last_hfl_3
+  [MISSING] last_hfl_4
+  [MISSING] last_hfl_5
+  [MISSING] mats_3
+  [MISSING] mats_4
+  [MISSING] mats_5
+  [MISSING] prep_2
+  [MISSING] prep_3
+  [MISSING] prep_4
+  [MISSING] prep_5
+  [MISSING] prep_sched_2
+  [MISSING] prep_sched_3
+  [MISSING] prep_sched_4
+  [MISSING] prep_sched_5
+
+완료: 8/25  |  미완료: 17/25
+
+=== GC pause (ms/s) per variant ===
+  baseline       N=2   mean=5.47 ms/s
+  last_hfl       N=2   mean=1.45 ms/s
+  mats           N=2   mean=1.44 ms/s
+  prep           N=1   mean=1.48 ms/s
+  prep_sched     N=1   mean=1.25 ms/s
+
+=== 논문 파일 ===
+  PDF  : /home/yeochan.yoon/banning/papers/prep/main.pdf (396K) [2026-05-18 11:01:15]
+  DOCX : /home/yeochan.yoon/banning/papers/prep/prep.docx (49K) [2026-05-18 11:01:15]
+
+=== Resume log (last 10 lines) ===
+  [busy] load5=10.38 mem=132GB besu=0 — waiting 600s...
+  [busy] load5=10.25 mem=128GB besu=0 — waiting 600s...
+  [busy] load5=10.17 mem=123GB besu=0 — waiting 600s...
+  [busy] load5=10.21 mem=119GB besu=0 — waiting 600s...
+  [busy] load5=10.24 mem=115GB besu=0 — waiting 600s...
+  [busy] load5=10.25 mem=111GB besu=0 — waiting 600s...
+  [busy] load5=10.17 mem=108GB besu=0 — waiting 600s...
+  [busy] load5=10.14 mem=105GB besu=0 — waiting 600s...
+  [busy] load5=10.18 mem=101GB besu=0 — waiting 600s...
+  [ERROR] Server still busy after 16200s. Giving up.
+
+======================================================

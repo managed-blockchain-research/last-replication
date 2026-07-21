@@ -1,0 +1,31 @@
+test:
+  name: throughput-saturation-100tps
+  description: Saturation throughput test @ 100 TPS (realistic load). 60s warmup + 120s measure, 30 workers, 30 contracts.
+  workers:
+    type: local
+    number: 30
+  rounds:
+    - label: warmup
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          numContracts: 30
+          contractPrefix: SB
+    - label: measure
+      txDuration: 120
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          numContracts: 30
+          contractPrefix: SB

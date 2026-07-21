@@ -1,0 +1,31 @@
+test:
+  name: throughput-saturation-40tps
+  description: Throughput test @ 40 TPS (below Besu ~70 TPS EVM capacity). 120s warmup + 180s measure, 30 workers, 30 contracts.
+  workers:
+    type: local
+    number: 30
+  rounds:
+    - label: warmup
+      txDuration: 120
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 40
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          numContracts: 30
+          contractPrefix: SB
+    - label: measure
+      txDuration: 180
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 40
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          numContracts: 30
+          contractPrefix: SB

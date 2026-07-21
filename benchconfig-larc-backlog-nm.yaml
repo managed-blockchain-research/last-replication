@@ -1,0 +1,22 @@
+test:
+  name: larc-backlog-drain-nm
+  description: >
+    LARC NM backlog drain — 240s measure at 2 TPS from deployer account,
+    while NM drains the preloaded 30-sender × 64-TX backlog.
+    Used after preload_nm_backlog.js creates pending-pool pressure.
+  workers:
+    type: local
+    number: 2
+  rounds:
+    - label: drain
+      txDuration: 240
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 2
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 50
+          numContracts: 30
+          contractPrefix: SB

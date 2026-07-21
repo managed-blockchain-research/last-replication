@@ -1,0 +1,18 @@
+test:
+  name: lass-short-validation
+  description: Short 2-minute LASS validation (baseline vs LASS comparison)
+  workers:
+    type: local
+    number: 5
+  rounds:
+    - label: lass-2min
+      txDuration: 120
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 200
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 50
+          contractId: StateBloater

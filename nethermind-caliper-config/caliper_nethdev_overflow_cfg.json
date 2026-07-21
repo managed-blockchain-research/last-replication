@@ -1,0 +1,60 @@
+{
+  "Init": {
+    "EnableUnsecuredDevWallet": true,
+    "KeepDevWalletInMemory": true,
+    "DiscoveryEnabled": false,
+    "PeerManagerEnabled": false,
+    "ChainSpecPath": "/home/yeochan.yoon/caliper-stress-test/nethermind-caliper-config/caliper_nethdev.json",
+    "BaseDbPath": "caliper_nethdev_overflow_db",
+    "LogFileName": "caliper_nethdev_overflow.log",
+    "MemoryHint": 1000000000
+  },
+  "TrieStore": {
+    "MaxMemoryMb": 4
+  },
+  "Sync": {
+    "NetworkingEnabled": false,
+    "SynchronizationEnabled": false
+  },
+  "TxPool": {
+    "Size": 4096,
+    "BlobsSupport": "Disabled"
+  },
+  "Network": {
+    "ActivePeersMaxCount": 0,
+    "MaxActivePeers": 0
+  },
+  "JsonRpc": {
+    "Enabled": true,
+    "Timeout": 60000,
+    "Host": "0.0.0.0",
+    "Port": 8545,
+    "WebSocketsPort": 8546,
+    "EnabledModules": [
+      "Admin",
+      "Eth",
+      "Health",
+      "Net",
+      "Parity",
+      "Personal",
+      "Proof",
+      "Subscribe",
+      "Trace",
+      "TxPool",
+      "Web3"
+    ]
+  },
+  "Metrics": {
+    "NodeName": "Caliper Dev Overflow"
+  },
+  "Mining": {
+    "Enabled": true
+  },
+  "Blocks": {
+    "MinGasPrice": 0,
+    "TargetBlockGasLimit": 30000000
+  },
+  "Merge": {
+    "Enabled": false
+  }
+}

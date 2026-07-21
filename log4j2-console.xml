@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Logger name="org.hyperledger.besu.ethereum.eth.transactions" level="INFO" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <!-- Suppress WS-closed cascade that generates millions of log lines under load -->
+    <Logger name="io.vertx.core.impl.ContextBase" level="FATAL" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="io.vertx.core.http.impl" level="FATAL" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Root level="INFO">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>

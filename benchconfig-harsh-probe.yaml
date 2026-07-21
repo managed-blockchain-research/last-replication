@@ -1,0 +1,18 @@
+test:
+  name: e-spill-cliff-probe
+  description: 600s probe at 1500 TPS to confirm GC cliff with 1g heap
+  workers:
+    type: local
+    number: 30
+  rounds:
+    - label: cliff-probe
+      txDuration: 600
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1500
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 200
+          contractId: StateBloater

@@ -1,0 +1,18 @@
+test:
+  name: e-spill-baseline-medium-intensity
+  description: Medium intensity baseline - moderate GC pressure (500 tx/s for 10 minutes)
+  workers:
+    type: local
+    number: 20
+  rounds:
+    - label: medium-intensity-bloat
+      txDuration: 600  # 10 minutes
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 500
+      workload:
+        module: benchmarks/stateBloat.js
+        arguments:
+          slotsPerTx: 50
+          contractId: StateBloater
