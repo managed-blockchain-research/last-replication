@@ -17,7 +17,12 @@
 #   - Pareto: after hfl_0.3 group, if curve is still flat → abort immediately
 # ============================================================
 set -euo pipefail
-cd /home/yeochan.yoon/caliper-stress-test
+# Isolated CWD (NOT the shared caliper-stress-test dir) so this doesn't race
+# compute23's concurrent LAST Besu-stress run over the same NFS mount.
+cd /home/yeochan.yoon/caliper-stress-test-c10
+
+export JAVA_HOME="/home/yeochan.yoon/jdk17-portable"
+export PATH="${JAVA_HOME}/bin:/home/yeochan.yoon/node22/bin:${PATH}"
 
 BESU_BIN="/home/yeochan.yoon/besu-24.1.1/bin/besu"
 LOG4J_CONFIG="/home/yeochan.yoon/caliper-stress-test/log4j2-console.xml"

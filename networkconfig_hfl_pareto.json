@@ -3,7 +3,7 @@
     "blockchain": "ethereum"
   },
   "ethereum": {
-    "url": "http://localhost:8545",
+    "url": "ws://localhost:8546",
     "contractDeployerAddress": "0xBE0cf996DE312b11990E4BcbBf7Fc156880AcFC8",
     "fromAddressSeed": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
     "contracts": {
@@ -24760,11 +24760,11 @@
     },
     "transactionOptions": {
       "gas": 8000000,
-      "gasPrice": "1000000000"
+      "gasPrice": "0"
     },
     "latencyLogPath": "/home/yeochan.yoon/caliper-stress-test/results/latency/harsh-baseline-20260128",
     "contractDeployerAddressPrivateKey": "0x8f2a55949038a9610f502c24114d051185071191bc20b60811a2d7fba4513689",
-    "gasPrice": "1000000000",
+    "gasPrice": 0,
     "chainId": 1337,
     "transactionBlockTimeout": 500,
     "transactionConfirmationBlocks": 1,
